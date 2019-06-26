@@ -1,25 +1,35 @@
 <template>
   <div id="app">
-    <cube-button>第一页</cube-button>
+      <cube-button @click='skipIndex'>返回首页</cube-button>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'app',
+  name: 'pageOne',
   components: {
-  }
+  },
+  data(){
+    return {
+
+    }
+  },
+  methods: {
+    skipIndex(){
+      window.location.href = 'index.html'
+    }
+  },
 }
 </script>
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+ 
+ .back-btn{
+   width: 200px;
+   height: 100px;
+   background-color: red;
+ }
 }
 </style>

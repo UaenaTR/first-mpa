@@ -41,5 +41,22 @@ module.exports = {
         postCompile: true,
         theme: true
       }
+    },
+
+    devServer: {
+      hot: true, 
+      host: '0.0.0.0',
+      port: 8080,
+      https: false,
+      open: false,
+      proxy: {
+        '/api': {
+          target: 'http://yapi.demo.qunar.com/mock/63710',
+          changeOrigin: true,
+          pathRewrite:{
+            '^/api': '' 
+          }
+        },
+      }
     }
 }
