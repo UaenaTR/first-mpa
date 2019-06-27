@@ -34,6 +34,7 @@ export default {
     methods: {
         skipHome(){
             this.$router.push('/Home')
+            console.log(this.$route.path)
         }
     },
 };
