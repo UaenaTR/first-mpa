@@ -1,14 +1,14 @@
 
-import ComOne from '../../components/ComOne.vue'
-
 export default [
     {
         path: '/',
-        redirect: '/index.html',
-    },
-    {
-        path: '/index.html',
         name: 'ComOne',
-        component: ComOne
+        component: () => import('../../components/ComOne.vue'),
+        children:[
+            {
+                path: '/Home',
+                component: () => import('../../components/Home.vue')
+            }
+        ]
     }
 ]

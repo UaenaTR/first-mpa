@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     skipIndex(){
-      window.location.href = 'index.html'
+      window.location.href = '/'
     }
   },
 }

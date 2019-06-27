@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    首页
     <img alt="Vue logo" src="../assets/logo.png">
+    <div>首页</div>
     <router-view></router-view>
-    <a href="pageOne.html">第一页</a>
+    <a class="first-page" href="pageOne.html">第一页</a>
   </div>
 </template>
 
@@ -40,5 +40,14 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  text-align: center;
+  position: relative;
+  height: 100%;
+
+  .first-page{
+    position: absolute;
+    bottom: 200px;
+    transform: translateX(-50%)
+  }
 }
 </style>
