@@ -26,7 +26,7 @@ export default {
   methods: {
     async testRequest(){
       const res = await request.get('api/test')
-      // console.log(res)
+      console.log(res)
     }
   },
 }

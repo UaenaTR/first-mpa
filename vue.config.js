@@ -1,4 +1,20 @@
+const TerserPlugin = require('terser-webpack-plugin')
+const isProduction = process.env.NODE_ENV === 'production'
+
 module.exports = {
+    //部署应用包时的基本 URL。
+    publicPath: process.env.NODE_ENV === 'production' 
+                ? '/mpa-cube/'
+                : '/',
+    //生产环境构建文件的目录
+    outputDir: 'dist',
+    //生成静态资源的目录
+    assetsDir: 'static',
+    //文件名hash
+    filenameHashing: true,
+    //生产环境source map
+    productionSourceMap: false,
+    //配置多页面入口
     pages: {
         index: {
             //入口
@@ -23,6 +39,38 @@ module.exports = {
             title: '第一页',
             chunks: ['chunk-vendors', 'chunk-common', 'pageOne']
         }
+    },
+
+    //webpack-merge合并
+    configureWebpack: (config) => {
+      if(isProduction){
+        config.optimization.minimizer.push(
+          new TerserPlugin({
+            //是否过滤
+            chunkFilter: (chunk) => {
+              // Exclude uglification for the `vendor` chunk
+              if (chunk.name === 'vendor') {
+                return false;
+              }
+    
+              return true;
+            },
+            //是否缓存
+            cache: true,
+            //是否多进程打包
+            parallel: true,
+            //提取注释
+            extractComments: 'all'
+          })
+        )
+      }
+    },
+
+    //修改原始webpack配置
+    chainWebpack: (config) => {
+      config.optimization.splitChunks({
+        cacheGroups: {}
+      })
     },
 
     css: {
@@ -58,5 +106,5 @@ module.exports = {
           }
         },
       }
-    }
+    },
 }
