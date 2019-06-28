@@ -13,7 +13,7 @@ export default {
     },
     data() {
         return {
-
+            radio:''
         };
     },
     components: {
@@ -29,7 +29,9 @@ export default {
 
     },
     watch: {
-
+        radio(){
+            console.log(this.radio)
+        }
     },
     methods: {
         skipHome(){
@@ -43,7 +45,7 @@ export default {
 <style scoped lang="scss">
     #ComOne{
         margin-top: 20px;
-
+        position: relative;
         .com-one{
             width: 100%;
             height: 50px;

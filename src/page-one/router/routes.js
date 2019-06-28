@@ -1,6 +1,6 @@
 export default [
     {
-        path: '/pageOne.html',
+        path: '/',
         name: 'ComOne',
         component: () => import('../../components/ComOne.vue'),
         children:[

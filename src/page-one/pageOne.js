@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import PageOne from './PageOne.vue'
 import Cube from 'cube-ui'
+import 'amfe-flexible'
 
 import router from './router/router'
 

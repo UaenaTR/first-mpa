@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Cube from 'cube-ui'
+import 'amfe-flexible'
 
 import router from './router/router'
 

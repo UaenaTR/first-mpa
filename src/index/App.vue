@@ -39,14 +39,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  // margin-top: 60px;
   text-align: center;
   position: relative;
   height: 100%;
 
   .first-page{
     position: absolute;
-    bottom: 200px;
+    bottom: 80px;
     transform: translateX(-50%)
   }
 }
