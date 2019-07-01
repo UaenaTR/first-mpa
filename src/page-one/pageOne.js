@@ -5,6 +5,8 @@ import 'amfe-flexible'
 
 import router from './router/router'
 
+import '../assets/css/base.css'
+
 Vue.use(Cube)
 
 Vue.config.productionTip = false

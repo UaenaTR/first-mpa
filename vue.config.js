@@ -4,7 +4,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 module.exports = {
     //部署应用包时的基本 URL。
     publicPath: process.env.NODE_ENV === 'production' 
-                ? '/mpa-cube/'
+                ? '/first-mpa/'
                 : '/',
     //生产环境构建文件的目录
     outputDir: 'dist',
